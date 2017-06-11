@@ -7,14 +7,19 @@ class ToDoList extends React.Component{
         super(props);
         this.state = {};
         this.state.todoList = this.props.todoList;
+     }
+
+     componentWillReceiveProps(nextProps) {
+        this.setState({
+            todoList: nextProps.todoList
+        });
     }
- 
 
     render(){
         return(
             <div>
                 {
-                    this.props.todoList.map(todo => <ToDo todo={todo}/>)
+                    this.state.todoList.map(todo => <ToDo todo={todo}/>)
                 }
             </div>
         )
@@ -25,14 +30,4 @@ ToDoList.propTypes = {
   todoList: PropTypes.array.isRequired
 };
 
-function mapStateToProps(state, ownProps){
-    return {
-        todoList: state.todoList
-    };
-}
-
-
-function mapDispatchToProps(dispatch) {
-  return ({});
-}
-export default connect(mapStateToProps, mapDispatchToProps)(ToDoList);
+export default ToDoList;

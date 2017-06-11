@@ -5,19 +5,39 @@ import configureStore from "../store/configureStore";
 import ToDoForm from "../components/ToDoForm";
 import ToDoList from "../components/ToDoList";
 import * as actions from "../actions/todoActions";
-const store = configureStore();
-console.log(store.getState());
 
-export default class App extends React.Component{
+class App extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = { todoList: []};
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            todoList: nextProps.todoList
+        });
+    }
+
     render(){
         return(
-            <Provider store={store}>
                 <div>
-                    <ToDoForm onSubmit={(text) =>{ store.dispatch(actions.addToDo(text)); console.log(store.getState().todoList)  } } />
-                    <ToDoList />
+                    <ToDoForm onSubmit={(text) => this.props.addToDo(text)  } />
+                    <ToDoList todoList={this.state.todoList}/>
                 </div>
-            </Provider>
             );
     }
 } 
 
+function mapStateToProps(state, ownProps){
+    return {
+        todoList: state.todoList
+    };
+}
+
+
+function mapDispatchToProps(dispatch) {
+  return ({
+      addToDo: (text)=> dispatch(actions.addToDo(text))
+  });
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App);
