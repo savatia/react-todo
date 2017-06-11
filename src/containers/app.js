@@ -22,7 +22,7 @@ class App extends React.Component{
         return(
                 <div>
                     <ToDoForm onSubmit={(text) => this.props.addToDo(text)  } />
-                    <ToDoList todoList={this.state.todoList}/>
+                    <ToDoList todoList={this.state.todoList} removeEvent={(index) => this.props.removeToDo(index)}/>
                 </div>
             );
     }
@@ -37,7 +37,8 @@ function mapStateToProps(state, ownProps){
 
 function mapDispatchToProps(dispatch) {
   return ({
-      addToDo: (text)=> dispatch(actions.addToDo(text))
+      addToDo: (text)=> dispatch(actions.addToDo(text)),
+      removeToDo: (index) => dispatch(actions.removeToDo(index))
   });
 }
 export default connect(mapStateToProps, mapDispatchToProps)(App);

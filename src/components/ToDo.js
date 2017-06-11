@@ -1,11 +1,17 @@
-import React from "react";
+import React, {PropTypes} from "react";
 
-export default class ToDo extends React.Component{
+class ToDo extends React.Component{
     render(){
         return(
             <div>
-                {this.props.todo}
+                <a onClick={this.props.clickEvent} href="#">{this.props.todo}</a>
             </div>
         )
     }
 }
+
+ToDo.propTypes = {
+  clickEvent: PropTypes.func.isRequired,
+  todo: PropTypes.string.isRequired
+};
+export default ToDo;

@@ -19,7 +19,7 @@ class ToDoList extends React.Component{
         return(
             <div>
                 {
-                    this.state.todoList.map(todo => <ToDo todo={todo}/>)
+                    this.state.todoList.map((todo, index) => <ToDo clickEvent={() => this.props.removeEvent(index)} todo={todo}/>)
                 }
             </div>
         )
@@ -27,7 +27,8 @@ class ToDoList extends React.Component{
 }
 
 ToDoList.propTypes = {
-  todoList: PropTypes.array.isRequired
+  todoList: PropTypes.array.isRequired,
+  removeEvent: PropTypes.func.isRequired
 };
 
 export default ToDoList;
