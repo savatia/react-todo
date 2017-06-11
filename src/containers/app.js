@@ -20,9 +20,13 @@ class App extends React.Component{
 
     render(){
         return(
-                <div>
-                    <ToDoForm onSubmit={(text) => this.props.addToDo(text)  } />
-                    <ToDoList todoList={this.state.todoList} removeEvent={(index) => this.props.removeToDo(index)}/>
+                <div className="container">
+                    <hr/>
+                    <div className="col-sm-6  col-sm-offset-3">
+                        <ToDoForm onSubmit={(text) => this.props.addToDo(text)  } />
+                        <ToDoList todoList={this.state.todoList} removeEvent={(index) => this.props.removeToDo(index)}/>
+                    </div>
+                   
                 </div>
             );
     }
