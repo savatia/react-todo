@@ -12,7 +12,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --inline",
+    "start": "webpack-dev-server --progress --inline -p",
     "build": "webpack"
   },
   "devDependencies": {
