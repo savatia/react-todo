@@ -13,7 +13,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --progress --inline -p",
-    "build": "webpack"
+    "build": "webpack -p"
   },
   "devDependencies": {
     "babel-cli": "*",
