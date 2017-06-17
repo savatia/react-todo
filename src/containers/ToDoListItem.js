@@ -50,7 +50,8 @@ class ToDoListItem extends React.Component{
                     </Modal.Header>
                     <form onSubmit={this.handleSubmit}>
                         <Modal.Body>
-                            <input required="required" onChange={this.handleInputChange} value={this.state.text} type="text" className="form-control"></input>
+                            <input required="required" autoFocus onChange={this.handleInputChange} value={this.state.text}
+                                type="text" className="form-control"></input>
                         </Modal.Body>
                         <Modal.Footer>
                             <Button bsStyle="success" type="submit">Save</Button>

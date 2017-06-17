@@ -4,7 +4,7 @@ import initialState from "./initialState";
 export default function todoReducer(state = initialState.todoList, action){
     switch(action.type){
         case "ADD_TODO":
-           return [...state, { id: guid(), text: action.payload}];
+           return [{ id: guid(), text: action.payload}, ...state];
            break;
         case "REMOVE_TODO":
             var index = findWithAttr(state, "id", action.payload.id);
