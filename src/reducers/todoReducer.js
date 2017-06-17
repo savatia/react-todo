@@ -16,10 +16,8 @@ export default function todoReducer(state = initialState.todoList, action){
                 if(todo.id === action.payload.id){
                     return  {...todo, text: action.payload.text };
                 }
-                else{return todo};
-               
-            } 
-            );
+                else{return todo};            
+            });
         default:
             return state;
     }

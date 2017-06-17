@@ -10,7 +10,6 @@ class ToDoList extends React.Component{
      }
 
      componentWillReceiveProps(nextProps) {
-         console.log(nextProps.children);
         this.setState({
             listItems: nextProps.children
         });

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class ToDoForm extends React.Component{
+export default class AddItemForm extends React.Component{
     constructor(props){
         super(props);
         this.state = {text: ''};
