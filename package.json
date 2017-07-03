@@ -1,27 +1,29 @@
 {
-  "dependencies": {
-    "babel-preset-es2015": "*",
-    "react-bootstrap": "^0.31.0",
-    "react-dom": "*",
-    "react-redux": "*",
-    "react-router": "*",
-    "react-transition-group": "*",
-    "redux": "*",
-    "webpack": "*",
-    "webpack-dev-server": "*"
-  },
-  "main": "index.js",
-  "scripts": {
-    "start": "webpack-dev-server --progress --inline -p",
-    "build": "webpack -p"
-  },
-  "devDependencies": {
-    "babel-cli": "*",
-    "babel-core": "*",
-    "babel-loader": "*",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-plugin-transform-react-jsx": "*",
-    "babel-preset-es2015": "*",
-    "babel-preset-react": "*"
-  }
+   "dependencies": {
+      "babel-preset-es2015": "*",
+      "preact": "^8.1.0",
+      "react": "^15.6.1",
+      "react-bootstrap": "^0.31.0",
+      "react-dom": "*",
+      "react-redux": "*",
+      "react-router": "*",
+      "react-transition-group": "*",
+      "redux": "*"
+   },
+   "main": "index.js",
+   "scripts": {
+      "start": "webpack-dev-server --progress --inline",
+      "build": "webpack -p"
+   },
+   "devDependencies": {
+      "babel-cli": "*",
+      "babel-core": "^6.25.0",
+      "babel-loader": "^7.1.1",
+      "babel-plugin-transform-object-rest-spread": "^6.23.0",
+      "babel-plugin-transform-react-jsx": "*",
+      "babel-preset-es2015": "*",
+      "babel-preset-react": "*",
+      "webpack": "^3.0.0",
+      "webpack-dev-server": "*"
+   }
 }
